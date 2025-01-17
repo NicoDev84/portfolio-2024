@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- boxicon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+     <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="language-switch">
+        <button id="languageToggle">
+            <span class="lang-text">FR</span>
+            <i class='bx bx-globe'></i>
+        </button>
+    </div>
+
+    <!-- navbar -->
+    <nav class="nav">
+        <ul class="nav-list">
+            <li class="active">
+                <i class='bx bx-home-alt'></i>
+                <span class="tooltip">Accueil</span>
+            </li>
+            <li>
+                <i class='bx bx-user' ></i>
+                <span class="tooltip">A propos</span>
+            </li>
+            <li>
+                <i class='bx bx-detail' ></i>
+                <span class="tooltip">CV</span>
+            </li>
+            <li>
+                <i class='bx bx-briefcase' ></i>
+                <span class="tooltip">Portfolio</span>
+            </li>
+            <li>
+                <i class='bx bx-envelope' ></i>
+                <span class="tooltip">Contact</span>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="box">
+            <!-- home section -->
+            <section class="section home active">
+                <div class="home-info">
+                    <h3>Hello I'm</h3>
+                    <h1>Carlier Nicolas</h1>
+                    <h3>Frontend Developper</h3>
+                    <p class="desc">Jeune développeur front-end, récemment formé, je suis passionné par le développement web et la création d'interfaces élégantes et réactives. Bien que débutant, j’ai acquis de solides bases en HTML, CSS, JavaScript, et je suis constamment en train d’apprendre de nouvelles technologies pour améliorer mes compétences. Curieux et déterminé, je suis prêt à contribuer à des projets dynamiques et innovants.</p>
+                    <div class="btn-sci">
+                        <a href="assets/CV-carlier-nicolas.pdf" class="btn" download>Télécharger CV</a>
+                        <div class="sci">
+                            <a target="_blank" href="https://github.com/NicoDev84">
+                                <i class='bx bxl-github' ></i>
+                                <span class="tooltip">Github</span>
+                            </a>
+                            <a target="_blank" href="https://www.linkedin.com/in/nicolas-carlier84/">
+                                <i class='bx bxl-linkedin' ></i>
+                                <span class="tooltip">Linkedin</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="img-wrapper">
+                    <div class="img-box home-img">
+                        <img src="./img/moi-Photoroom.png" alt="">
+                    </div>
+                </div>
+            </section>
+
+            <!-- about section -->
+            <section class="section about">
+                <div class="img-wrapper">
+                    <div class="img-box about-img">
+                        <img src="./img/moi-Photoroom.png" alt="">
+                    </div>
+                </div>
+
+                <div class="about-info">
+                    <h2 class="title">A propos de moi</h2>
+                    <h3>Frontend Developper!</h3>
+                    <p class="desc">Après avoir récemment terminé une formation en développement web, je me spécialise dans la création d’interfaces utilisateur réactives et modernes. J'ai découvert ma passion pour le développement web en explorant comment le code peut donner vie à des idées et des concepts. J'ai acquis des compétences en HTML, CSS, JavaScript, et des bases dans des frameworks comme React. Je suis constamment en quête de nouveaux défis pour améliorer mes compétences et apporter des solutions innovantes aux projets auxquels je participe. <br>
+
+                    Je suis également intéressé par l'apprentissage continu dans des domaines comme le design UX/UI, et je m’efforce de rester à jour sur les tendances du web pour offrir des solutions de pointe. Mon objectif est de collaborer avec des équipes passionnées et de contribuer à la création d’expériences utilisateur optimales.</p>
+                    <!-- <a href="#" class="btn">Voir plus</a> -->
+                </div>
+            </section>
+
+            <!-- resume (experience, skills education) section -->
+            <section class="section resume">
+                <h2 class="title">Resume</h2>
+                <div class="tab-box">
+                    <div class="tab-list resume-list active">
+                        <h3>Expérience</h3>
+                    </div>
+
+                    <div class="tab-list resume-list">
+                        <h3>Compétences</h3>
+                    </div>
+
+                    <div class="tab-list resume-list">
+                        <h3>Formation</h3>
+                    </div>
+                </div>
+                <div class="tab-wrapper">
+                    <div class="tab-grid resume-box experience active">
+                        <div class="tab-item resume-item">
+                            <h4>2024 - Present</h4>
+                            <h4>Développeur Frontend - Portfolio personnel</h4>
+                            <h4>Technologies utilisées : HTML, CSS, JavaScript</h4>
+                            <p>- Création de mon propre portfolio mettant en avant mes compétences en développement frontend. <br>
+                                - Réalisation d'une interface utilisateur responsive et moderne. <br>
+                                - Optimisation du site pour la performance et l'accessibilité.</p>
+                        </div>
+                        <div class="tab-item resume-item">
+                            <h4>2023</h4>
+                            <h4>Développeur WordPress - Hikutini Tattoo</h4>
+                            <h4>Technologies utilisées : WordPress, CSS</h4>
+                            <p>- Conception et développement d'un site vitrine pour un studio de tatouage. <br>
+                                - Intégration des besoins du client pour refléter l'identité visuelle du studio. <br>
+                                - Mise en place d'un formulaire de contact et d'une galerie photo dynamique.</p>
+                        </div>
+                        <div class="tab-item resume-item">
+                            <h4>2022</h4>
+                            <h4>Développeur WordPress (Stage) - Marcarine R</h4>
+                            <h4>Technologies utilisées : WordPress</h4>
+                            <p>- Création d'un site vitrine pour une entreprise de vente de cravates. <br>
+                                - Gestion de contenu et intégration de plugins pour optimiser l'expérience utilisateur. <br>
+                                - Participation à l'optimisation SEO du site pour améliorer sa visibilité en ligne.</p>
+                        </div>
+                        <div class="tab-item resume-item">
+                            <h4>2020 - 2021</h4>
+                            <h4>Conseiller Médiateur Numérique - Ville de Monteux</h4>
+                            <p>- Aide et accompagnement des citoyens dans l'utilisation des outils numériques. <br>
+                                - Formation des utilisateurs aux plateformes en ligne et aux services publics numériques. <br>
+                                - Sensibilisation à la sécurité informatique et à l'utilisation responsable des outils digitaux.</p>
+                        </div>
+                        
+                    </div>
+
+                    <div class="tab-grid resume-box skills">
+                        <div class="tab-item resume-item">
+                            <i class='bx bxl-html5'></i>
+                            <p>HTML5</p>
+                        </div>
+                        <div class="tab-item resume-item">
+                            <i class='bx bxl-css3' ></i>
+                            <p>CSS3</p>
+                        </div>
+                        <div class="tab-item resume-item">
+                            <i class='bx bxl-javascript' ></i>
+                            <p>JavaScript</p>
+                        </div>
+                        <div class="tab-item resume-item">
+                            <i class='bx bxl-react' ></i>
+                            <p>React.js</p>
+                        </div>
+                        <div class="tab-item resume-item">
+                            <i class='bx bxl-tailwind-css' ></i>
+                            <p>Tailwind.css</p>
+                        </div>
+                        <div class="tab-item resume-item">
+                            <i class='bx bxl-bootstrap' ></i>
+                            <p>Bootstrap</p>
+                        </div>
+                        <div class="tab-item resume-item">
+                            <i class='bx bxl-vuejs' ></i>
+                            <p>Vue.js</p>
+                        </div>
+                        <div class="tab-item resume-item">
+                            <i class='bx bxl-nodejs' ></i>
+                            <p>Node.js</p>
+                            <p>en cour...</p>
+                        </div>
+                    </div>
+
+                    <div class="tab-grid resume-box education">
+                        <div class="tab-item resume-item">
+                            <h4>2024</h4>
+                            <h4>Developpeur Web / Web mobile</h4>
+                            <h4>Afpa Niveau bac+2 (Distanciel)</h4>
+                            <p> - Développer la partie front-end d’une application web ou web mobile sécurisée <br>
+                                - Développer la partie back-end d’une application web ou web mobile sécurisée</p>
+                        </div>
+                        <div class="tab-item resume-item">
+                            <h4>2024</h4>
+                            <h4>Developpeur Web / Web mobile</h4>
+                            <h4>Webforce 3 Niveau bac+2 (Présentiel)</h4>
+                            <p>- Développer la partie front-end d’une application web ou web mobile         sécurisée <br>
+                                - Développer la partie back-end d’une application web ou web mobile sécurisée</p>
+                        </div>
+                        <div class="tab-item resume-item">
+                            <h4>2024</h4>
+                            <h4>Conseiller médiateur numérique</h4>
+                            <h4>Afpa Niveau bac+2</h4>
+                            <p>- Accompagner différents publics vers l'autonomie dans les usages des technologies, services et médias numériques <br>
+                               - Contribuer au développement d’un espace de médiation numérique et de ses projets <br>
+                               - Contribuer à la gestion d'un espace de médiation numérique et animer ses projets collaboratifs</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- portfolio (work, services) section -->
+            <section class="section portfolio">
+                <h2 class="title">Portfolio</h2>
+                <div class="tab-box">
+                    <div class="tab-list portfolio-list active">
+                        <h3>Mes projets</h3>
+                    </div>
+                    <div class="tab-list portfolio-list">
+                        <h3>Mes services</h3>
+                    </div>
+                </div>
+
+                <div class="tab-wrapper">
+                    <div class="tab-grid portfolio-box work active">
+                        <div class="tab-item portfolio-item">                           
+
+                            <div class="work-img">
+                                <img src="./img/site hikutini tattoo.JPG" alt="">
+                            </div>
+                            <div class="work-info">
+                                <h4>Hikutini Tattoo</h4>
+                                <p>site d'un tatoueur polynesien réalisé avec wordpress et html css javascript</p>
+                                <div class="tech-used">
+                                    <p>Wordpress,HTML, CSS, Javascript</p>
+                                </div>
+                                <div class="portfolio-icon work-icon">
+                                    <a target="_blank" href="https://hikutini-tattoo.fr/">
+                                        <i class='bx bx-arrow-back'></i>
+                                        <span class="tooltip">Preview</span>
+                                    </a>
+                                    <!-- <a href="https://github.com/">
+                                        <i class='bx bxl-github' ></i>
+                                        <span class="tooltip">GitHub Repository</span>
+                                    </a> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-item portfolio-item">                           
+
+                            <div class="work-img">
+                                <img src="./img/img-centreAction.PNG" alt="">
+                            </div>
+                            <div class="work-info">
+                                <h4>Site Centre Action en cour de développement</h4>
+                                <p>Prochainement...</p>
+                                <div class="tech-used">
+                                    <p>React</p>
+                                </div>
+                                <div class="portfolio-icon work-icon">
+                                    <a href="#">
+                                        <i class='bx bx-arrow-back'></i>
+                                        <span class="tooltip">Preview</span>
+                                    </a>
+                                    <!-- <a href="#">
+                                        <i class='bx bxl-github' ></i>
+                                        <span class="tooltip">GitHub Repository</span>
+                                    </a> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-item portfolio-item">                           
+
+                            <div class="work-img">
+                                <img src="" alt="">
+                            </div>
+                            <div class="work-info">
+                                <h4>Prochainement...</h4>
+                                <p></p>
+                                <div class="tech-used">
+                                    <p></p>
+                                </div>
+                                <div class="portfolio-icon work-icon">
+                                    <a href="#">
+                                        <i class='bx bx-arrow-back'></i>
+                                        <span class="tooltip">Preview</span>
+                                    </a>
+                                    <!-- <a href="#">
+                                        <i class='bx bxl-github' ></i>
+                                        <span class="tooltip">GitHub Repository</span>
+                                    </a> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-item portfolio-item">                           
+
+                            <div class="work-img">
+                                <img src="" alt="">
+                            </div>
+                            <div class="work-info">
+                                <h4>Prochainement...</h4>
+                                <p></p>
+                                <div class="tech-used">
+                                    <p></p>
+                                </div>
+                                <div class="portfolio-icon work-icon">
+                                    <a href="#">
+                                        <i class='bx bx-arrow-back'></i>
+                                        <span class="tooltip">Preview</span>
+                                    </a>
+                                    <!-- <a href="#">
+                                        <i class='bx bxl-github' ></i>
+                                        <span class="tooltip">GitHub Repository</span>
+                                    </a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-grid portfolio-box service">
+                        <div class="tab-item portfolio-item">
+                            <div class="portfolio-icon service-icon">
+                                <i class='bx bx-code-alt icon'></i>
+                                <a href="#"><i class='bx bx-arrow-back' ></i></a>
+                            </div>
+                            <h4>Développement Web</h4>
+                            <p>Création de sites web modernes et responsifs, en utilisant les dernières technologies front-end. Je m'assure que chaque site soit optimisé pour tous les appareils et offre une expérience utilisateur exceptionnelle.</p>
+                        </div>
+                        <div class="tab-item portfolio-item">
+                            <div class="portfolio-icon service-icon">
+                                <i class='bx bx-palette icon' ></i>
+                                <a href="#"><i class='bx bx-arrow-back' ></i></a>
+                            </div>
+                            <h4>Design Créatif</h4>
+                            <p>Conception d'interfaces visuellement attrayantes et intuitives. Je combine créativité et fonctionnalité pour créer des designs uniques qui reflètent l'identité de votre marque.</p>
+                        </div>
+                        <div class="tab-item portfolio-item">
+                            <div class="portfolio-icon service-icon">
+                                <i class='bx bxs-paint icon' ></i>
+                                <a href="#"><i class='bx bx-arrow-back' ></i></a>
+                            </div>
+                            <h4>UI/UX Design</h4>
+                            <p>Création d'expériences utilisateur fluides et agréables. Je me concentre sur l'ergonomie et l'accessibilité pour garantir que vos utilisateurs trouvent facilement ce qu'ils cherchent.</p>
+                        </div>
+                        <div class="tab-item portfolio-item">
+                            <div class="portfolio-icon service-icon">
+                                <i class='bx bx-signal-5 code icon'></i>
+                                <a href="#"><i class='bx bx-arrow-back' ></i></a>
+                            </div>
+                            <h4>Optimisation SEO</h4>
+                            <p>Amélioration de la visibilité de votre site sur les moteurs de recherche. Mise en place des meilleures pratiques SEO pour augmenter votre présence en ligne et attirer plus de visiteurs.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- contact section -->
+             <section class="section contact active">
+                <h2 class="title">Contact</h2>
+                <div class="contact-wrapper">
+                    <form action="" class="contact-form">
+                        <h3>Travaillons ensemble !</h3>
+                        <div class="field-box">
+                            <input type="text" placeholder="Nom complet" required>
+                            <input type="email" placeholder="Adresse email" required>
+                            <input type="text" placeholder="numéro de téléphone" required>
+                            <input type="text" placeholder="sujet du message" required>
+                            <textarea name="" id="" placeholder="Votre message" required></textarea>
+                        </div>
+                        <div class="contact-btn">
+                            <button type="submit" class="btn">Envoyer</button>
+                        </div>
+                    </form>
+                </div>
+             </section>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
