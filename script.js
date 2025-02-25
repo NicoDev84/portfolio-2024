@@ -412,3 +412,22 @@ portfolioLists.forEach((list, idx) => {
 setTimeout(() =>{
     sections[4].classList.remove('active');
 }, 1500);
+
+// formulaire de contact
+
+document.querySelector('.contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Empêche le rechargement de la page
+
+    const formData = new FormData(this);
+    fetch('/send-email', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert(data); // Affiche le message de succès ou d'erreur
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
