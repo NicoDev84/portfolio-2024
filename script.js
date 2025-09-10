@@ -419,15 +419,23 @@ document.querySelector('.contact-form').addEventListener('submit', function(even
     event.preventDefault(); // Empêche le rechargement de la page
 
     const formData = new FormData(this);
-    fetch('/send-email', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.text())
-    .then(data => {
-        alert(data); // Affiche le message de succès ou d'erreur
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+    const name = formData.get('name') || '';
+    const email = formData.get('email') || '';
+    const phone = formData.get('phone') || '';
+    const subject = formData.get('subject') || '';
+    const message = formData.get('message') || '';
+
+    const to = 'carliernicolas.dev@gmail.com';
+    const mailSubject = encodeURIComponent(`${subject} - ${name}`);
+    const mailBody = encodeURIComponent(
+        `Nom: ${name}\nEmail: ${email}\nTéléphone: ${phone}\n\n${message}`
+    );
+
+    // Ouvre le client mail de l'utilisateur
+    window.location.href = `mailto:${to}?subject=${mailSubject}&body=${mailBody}`;
+
+    // Optionnel: feedback visuel
+    setTimeout(() => {
+        alert('Votre client e-mail va s\'ouvrir pour envoyer le message.');
+    }, 100);
 });
