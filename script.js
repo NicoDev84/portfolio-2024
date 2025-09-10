@@ -257,6 +257,19 @@ function updateContent(lang) {
         inputs[3].placeholder = translations[lang].emailSubject;
         inputs[4].placeholder = translations[lang].message;
         contactForm.querySelector('button').textContent = translations[lang].sendMessage;
+
+        // Étiquettes du formulaire (labels)
+        const labelMap = [
+            { sel: 'label[for="name"]', key: 'fullName' },
+            { sel: 'label[for="email"]', key: 'emailAddress' },
+            { sel: 'label[for="phone"]', key: 'phoneNumber' },
+            { sel: 'label[for="subject"]', key: 'emailSubject' },
+            { sel: 'label[for="message"]', key: 'message' },
+        ];
+        labelMap.forEach(({ sel, key }) => {
+            const label = contactForm.querySelector(sel);
+            if (label) label.textContent = translations[lang][key];
+        });
     }
 
     // Mise à jour des descriptions de la page d'accueil et à propos
@@ -413,29 +426,98 @@ setTimeout(() =>{
     sections[4].classList.remove('active');
 }, 1500);
 
-// formulaire de contact
+// formulaire de contact (désactivé si le formulaire n'existe plus)
+const contactFormElement = document.querySelector('.contact-form');
+if (contactFormElement) {
+    contactFormElement.addEventListener('submit', function(event) {
+        event.preventDefault(); // Empêche le rechargement de la page
 
-document.querySelector('.contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Empêche le rechargement de la page
+        const formData = new FormData(this);
+        const name = formData.get('name') || '';
+        const email = formData.get('email') || '';
+        const phone = formData.get('phone') || '';
+        const subject = formData.get('subject') || '';
+        const message = formData.get('message') || '';
 
-    const formData = new FormData(this);
-    const name = formData.get('name') || '';
-    const email = formData.get('email') || '';
-    const phone = formData.get('phone') || '';
-    const subject = formData.get('subject') || '';
-    const message = formData.get('message') || '';
+        const to = 'carliernicolas.dev@gmail.com';
+        const mailSubject = encodeURIComponent(`${subject} - ${name}`);
+        const mailBody = encodeURIComponent(
+            `Nom: ${name}\nEmail: ${email}\nTéléphone: ${phone}\n\n${message}`
+        );
 
-    const to = 'carliernicolas.dev@gmail.com';
-    const mailSubject = encodeURIComponent(`${subject} - ${name}`);
-    const mailBody = encodeURIComponent(
-        `Nom: ${name}\nEmail: ${email}\nTéléphone: ${phone}\n\n${message}`
-    );
+        // Ouvre le client mail de l'utilisateur
+        window.location.href = `mailto:${to}?subject=${mailSubject}&body=${mailBody}`;
 
-    // Ouvre le client mail de l'utilisateur
-    window.location.href = `mailto:${to}?subject=${mailSubject}&body=${mailBody}`;
+        // Optionnel: feedback visuel
+        setTimeout(() => {
+            alert('Votre client e-mail va s\'ouvrir pour envoyer le message.');
+        }, 100);
+    });
+}
 
-    // Optionnel: feedback visuel
-    setTimeout(() => {
-        alert('Votre client e-mail va s\'ouvrir pour envoyer le message.');
-    }, 100);
-});
+// Copier l'adresse email depuis la carte de contact
+const copyBtn = document.querySelector('.copy-email');
+if (copyBtn) {
+    copyBtn.addEventListener('click', async (e) => {
+        const btn = e.currentTarget;
+        const email = btn.getAttribute('data-email');
+        try {
+            if (navigator.clipboard && window.isSecureContext) {
+                await navigator.clipboard.writeText(email);
+            } else {
+                // Fallback
+                const textarea = document.createElement('textarea');
+                textarea.value = email;
+                textarea.style.position = 'fixed';
+                textarea.style.left = '-9999px';
+                document.body.appendChild(textarea);
+                textarea.focus();
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+            }
+            const oldText = btn.textContent;
+            btn.textContent = 'Copié !';
+            btn.classList.add('copied');
+            setTimeout(() => {
+                btn.textContent = oldText;
+                btn.classList.remove('copied');
+            }, 1500);
+        } catch (err) {
+            console.error('Clipboard error:', err);
+            alert("Impossible de copier l'e-mail");
+        }
+    });
+}
+
+// Gestionnaire pour le bouton "Écrire" qui ouvre le client email
+const writeEmailBtn = document.querySelector('.card-actions .btn:not(.copy-email)');
+if (writeEmailBtn) {
+    writeEmailBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const email = 'carliernicolas.dev@gmail.com';
+        window.location.href = `mailto:${email}`;
+        // Délai minimal pour éviter problèmes de navigation
+        setTimeout(() => {
+            // Feedback visuel discret
+            const toast = document.createElement('div');
+            toast.textContent = "Ouverture de votre client email...";
+            toast.style.position = 'fixed';
+            toast.style.bottom = '20px';
+            toast.style.left = '50%';
+            toast.style.transform = 'translateX(-50%)';
+            toast.style.background = 'rgba(0,0,0,0.8)';
+            toast.style.color = '#fff';
+            toast.style.padding = '8px 16px';
+            toast.style.borderRadius = '4px';
+            toast.style.zIndex = '9999';
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transition = 'opacity 0.5s';
+                setTimeout(() => document.body.removeChild(toast), 500);
+            }, 2000);
+        }, 100);
+    });
+}

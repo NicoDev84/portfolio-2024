@@ -354,24 +354,46 @@
             <!-- contact section -->
              <section class="section contact active">
                 <h2 class="title">Contact</h2>
-                <div class="contact-section">
-                    <p style="font-weight: bold; margin-bottom: 5px;">Adresse e-mail: <a href="mailto:carliernicolas.dev@gmail.com" style="color: #007BFF; text-decoration: none;">carliernicolas.dev@gmail.com</a></p>
-                    <p style="font-weight: bold;">Numéro de téléphone: <span style="color: #007BFF;">07.82.29.15.76</span></p>
-                </div>
-                <div class="contact-wrapper">
-                    <form action="#" method="POST" class="contact-form">
-                        <h3>Travaillons ensemble !</h3>
-                        <div class="field-box">
-                            <input type="text" name="name" placeholder="Nom complet" required>
-                            <input type="email" name="email" placeholder="Adresse email" required>
-                            <input type="text" name="phone" placeholder="numéro de téléphone" required>
-                            <input type="text" name="subject" placeholder="sujet du message" required>
-                            <textarea name="message" id="" placeholder="Votre message" required></textarea>
+                <div class="contact-grid">
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <div class="icon-circle">
+                                <i class='bx bx-envelope'></i>
+                            </div>
+                            <div class="card-content">
+                                <h4>Email</h4>
+                                <p><a href="mailto:carliernicolas.dev@gmail.com">carliernicolas.dev@gmail.com</a></p>
+                                <div class="card-actions">
+                                    <a class="btn btn-small" href="mailto:carliernicolas.dev@gmail.com">Écrire</a>
+                                    <button type="button" class="btn btn-outline btn-small copy-email" data-email="carliernicolas.dev@gmail.com">Copier</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="contact-btn">
-                            <button type="submit" class="btn">Envoyer</button>
+                        <div class="contact-card">
+                            <div class="icon-circle">
+                                <i class='bx bx-phone'></i>
+                            </div>
+                            <div class="card-content">
+                                <h4>Téléphone</h4>
+                                <p><a href="tel:0782291576">07.82.29.15.76</a></p>
+                                <div class="card-actions">
+                                    <a class="btn btn-small" href="tel:0782291576">Appeler</a>
+                                </div>
+                            </div>
                         </div>
-                    </form>
+                        <div class="contact-card">
+                            <div class="icon-circle">
+                                <i class='bx bxl-linkedin'></i>
+                            </div>
+                            <div class="card-content">
+                                <h4>Réseaux</h4>
+                                <div class="social-links">
+                                    <a target="_blank" href="https://www.linkedin.com/in/nicolas-carlier84/">LinkedIn</a>
+                                    <a target="_blank" href="https://github.com/NicoDev84">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
              </section>
         </div>

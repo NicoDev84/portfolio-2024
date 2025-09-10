@@ -638,6 +638,167 @@ a:hover .tooltip,
     margin-top: 20px;
 }
 
+/* Contact Section Redesigned */
+.contact-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    max-width: 600px;
+    margin: 4rem auto 0;
+}
+
+.contact-cards{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.contact-card{
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    background: var(--third-bg-color);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 1.2rem;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    transition: transform .25s ease, box-shadow .25s ease;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.contact-card::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(14,255,255,0.05) 0%, transparent 50%);
+    z-index: 0;
+}
+
+.contact-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.3);
+}
+
+.icon-circle{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--white-color);
+    color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    margin: 0 auto;
+    grid-row: span 3;
+    position: relative;
+    z-index: 1;
+}
+
+.card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.card-content h4{
+    margin-bottom: .8rem;
+    font-size: 2rem;
+    color: var(--main-color);
+}
+
+.card-content p{
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+}
+
+.card-content p a{
+    color: var(--white-color);
+    text-decoration: none;
+    transition: color .2s;
+}
+
+.card-content p a:hover{
+    color: var(--main-color);
+}
+
+.card-actions{
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-small{
+    padding: .8rem 1.6rem;
+    font-size: 1.4rem;
+    min-width: 80px;
+}
+
+.btn-outline{
+    background: transparent;
+    color: var(--main-color);
+    border: .2rem solid var(--main-color);
+    box-shadow: none;
+}
+
+.btn-outline:hover{
+    background: var(--main-color);
+    color: var(--bg-color);
+}
+
+.btn.copied {
+    background: #28a745;
+    border-color: #28a745;
+}
+
+.social-links{
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-links a{
+    display: inline-block;
+    color: var(--white-color);
+    font-weight: 500;
+    padding: .5rem 1rem;
+    border-radius: .4rem;
+    background: rgba(255,255,255,0.1);
+    transition: all .3s;
+}
+
+.social-links a:hover{
+    background: var(--main-color);
+    color: var(--bg-color);
+}
+
+/* Improved form layout with labels */
+.contact-form .field-box{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.contact-form .field-box label{
+    font-size: 1.4rem;
+    color: var(--tab-list-color);
+    margin-top: 1rem;
+    margin-bottom: .4rem;
+}
+
+.contact-form .field-box input,
+.contact-form .field-box textarea{
+    flex: initial;
+    width: 100%;
+}
+
 .language-switch {
     position: fixed;
     top: 20px;
@@ -690,6 +851,7 @@ a:hover .tooltip,
         padding-top: 1.5rem;
         padding-bottom: 18rem;
     }
+    /* Contact responsive styles handled in main section */
 }
 
 @media screen and (max-width: 768px){
